@@ -1,7 +1,7 @@
 #include "File.h"
 #include <QString>
 
-File::File(const QString& name, QObject* parent) : file_(name)
+File::File(const QString& name, QObject* parent) : QObject(parent), file_(name)
 {
 }
 
