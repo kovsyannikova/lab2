@@ -1,7 +1,7 @@
 #include "File.h"
 #include <QString>
 
-File::File(const QString& name) : file_(name)
+File::File(const QString& name, QObject* parent) : QObject(parent), file_(name)
 {
 }
 
@@ -18,14 +18,14 @@ void File::checkFile()
         if (!exist || size_ != size)
         //Если прошлый размер файла не совпадает с новым, значит файл изменился
         {
-            size_ = size; //Запоминаем новый размер файла
-            Notify(size_); //Оповещаем наблюдателй
+            size_ = size; // Запоминаем новый размер файла
+            emit Notify(size_); // вместо вызова метода Notify, вызываем сигнал через emit
         }
     }
     else if (exist_)
     //Если файл не существует, но существовал раньше
     {
-        Notify(-1); //Оповещаем что файл не существует
+        emit Notify(-1); //Оповещаем что файл не существует
     }
 
     exist_ = exist;

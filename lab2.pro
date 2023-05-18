@@ -9,7 +9,6 @@ CONFIG -= app_bundle
 
 SOURCES += \
         File.cpp \
-        FileObservable.cpp \
         FileObserver.cpp \
         main.cpp
 
@@ -23,6 +22,4 @@ DISTFILES += \
 
 HEADERS += \
     File.h \
-    FileObservable.h \
-    FileObserver.h \
-    IObserver.h
+    FileObserver.h
