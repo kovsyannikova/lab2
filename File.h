@@ -19,9 +19,6 @@ private:
     // Информация об отслеживающем файле
     QFileInfo file_;
 
-    // Дата последнего изменения
-    QDateTime lastModificationDate_;
-
     bool exist_ = false;
     qint64 size_ = -1;
 };

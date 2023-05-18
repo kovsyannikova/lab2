@@ -1,7 +1,7 @@
 #include "File.h"
 #include <QString>
 
-File::File(const QString& name, QObject* parent) : QObject(parent), file_(name)
+File::File(const QString& name, QObject* parent) : file_(name)
 {
 }
 
@@ -15,7 +15,7 @@ void File::checkFile()
     {
         qint64 size = file_.size();
 
-        if (!exist || size_ != size)
+        if (size_ != size)
         //Если прошлый размер файла не совпадает с новым, значит файл изменился
         {
             size_ = size; // Запоминаем новый размер файла

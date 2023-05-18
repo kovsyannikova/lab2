@@ -13,15 +13,6 @@ int main()
 
     QObject::connect(&file, &File::Notify, &observer, &FileObserver::UpdateState);
 
-    // Если нужно будет подключать несколько наблюдателей
-    //    std::vector<FileObserver> observers(2);
-
-    //    for(auto& observer: observers)
-    //    {
-    //        QObject::connect(&file, &File::notify, &observer, &FileObserver::update);
-    //    }
-
-
     while (true)
     {
         file.checkFile(); // Каждые 100 млс проверяем информацию о файле
